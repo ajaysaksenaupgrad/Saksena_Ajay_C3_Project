@@ -59,6 +59,7 @@ public class Restaurant {
     }
     
     public int getOrderValue(List<Item> menu) {
+    	
     	//Returning sample order value to bypass compilation errors
     	return 500;
     }

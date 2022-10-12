@@ -23,7 +23,7 @@ class RestaurantTest {
     @Test
     public void get_total_order_value_when_particular_items_selected() {
     	List<Item> restMenu = restaurant.getMenu();
-    	assertEquals(300,restaurant.getOrderValue(restMenu));
+    	assertEquals(388,restaurant.getOrderValue(restMenu));
     }
     
     @Test
