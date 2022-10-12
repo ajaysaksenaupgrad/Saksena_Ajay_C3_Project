@@ -3,6 +3,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalTime;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,6 +18,21 @@ class RestaurantTest {
         restaurant = new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
         restaurant.addToMenu("Sweet corn soup",119);
         restaurant.addToMenu("Vegetable lasagne", 269);
+    }
+    
+    @Test
+    public void get_total_order_value_when_particular_items_selected() {
+    	List<Item> restMenu = restaurant.getMenu();
+    	assertEquals(300,restaurant.getOrderValue(restMenu));
+    }
+    
+    @Test
+    public void total_order_value_should_reduce_when_particular_item_removed() {
+    	List<Item> restMenu = restaurant.getMenu();
+    	int totalOrderValue = restaurant.getOrderValue(restMenu);
+    	int orderValueAfterItemRemoval = restMenu.get(1).getPrice();
+    	restMenu.remove(1);
+    	assertEquals(totalOrderValue - orderValueAfterItemRemoval,restaurant.getOrderValue(restMenu));
     }
 
     //>>>>>>>>>>>>>>>>>>>>>>>>>OPEN/CLOSED<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

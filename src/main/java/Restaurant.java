@@ -57,6 +57,12 @@ public class Restaurant {
 
         menu.remove(itemToBeRemoved);
     }
+    
+    public int getOrderValue(List<Item> menu) {
+    	//Returning sample order value to bypass compilation errors
+    	return 500;
+    }
+    
     public void displayDetails(){
         System.out.println("Restaurant:"+ name + "\n"
                 +"Location:"+ location + "\n"

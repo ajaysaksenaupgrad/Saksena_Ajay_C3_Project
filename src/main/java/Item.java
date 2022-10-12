@@ -1,5 +1,16 @@
 public class Item {
-    private String name;
+    public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	private String name;
     private int price;
 
     public Item(String name, int price) {
