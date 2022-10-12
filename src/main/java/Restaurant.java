@@ -37,8 +37,11 @@ public class Restaurant {
     }
     
     public int getOrderValue(List<Item> menu) {
-    	//Returning sample order value to bypass compilation errors
-    	return 500;
+    	int totalOrderValue = 0;
+    	for(Item item : menu) {
+    		totalOrderValue+=item.getPrice();
+    	}
+    	return totalOrderValue;
     }
 
     private Item findItemByName(String itemName){
