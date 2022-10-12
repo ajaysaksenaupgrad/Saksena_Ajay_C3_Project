@@ -2,8 +2,20 @@ public class Item {
 	
 	private String name;
     private int price;
+    
+    public int getPrice() {
+		return price;
+	}
 
-    public Item(String name, int price) {
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Item(String name, int price) {
         this.name = name;
         this.price = price;
     }
@@ -11,6 +23,7 @@ public class Item {
     public String getName() {
         return name;
     }
+    
     @Override
     public String toString(){
         return  name + ":"

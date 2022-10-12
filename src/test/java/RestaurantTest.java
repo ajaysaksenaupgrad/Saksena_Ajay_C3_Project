@@ -20,6 +20,21 @@ class RestaurantTest {
         restaurant.addToMenu("Vegetable lasagne", 269);
     }
     
+    @Test
+    public void get_total_order_value_when_particular_items_selected() {
+    	List<Item> restMenu = restaurant.getMenu();
+    	assertEquals(388,restaurant.getOrderValue(restMenu));
+    }
+
+    @Test
+    public void total_order_value_should_reduce_when_particular_item_removed() {
+    	List<Item> restMenu = restaurant.getMenu();
+    	int totalOrderValue = restaurant.getOrderValue(restMenu);
+    	int orderValueAfterItemRemoval = restMenu.get(1).getPrice();
+    	restMenu.remove(1);
+    	assertEquals(totalOrderValue - orderValueAfterItemRemoval,restaurant.getOrderValue(restMenu));
+    }
+    
     //>>>>>>>>>>>>>>>>>>>>>>>>>OPEN/CLOSED<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     //-------FOR THE 2 TESTS BELOW, YOU MAY USE THE CONCEPT OF MOCKING, IF YOU RUN INTO ANY TROUBLE
     @Test

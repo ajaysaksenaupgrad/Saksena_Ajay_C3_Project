@@ -35,6 +35,11 @@ public class Restaurant {
     public List<Item> getMenu() {
         return menu;
     }
+    
+    public int getOrderValue(List<Item> menu) {
+    	//Returning sample order value to bypass compilation errors
+    	return 500;
+    }
 
     private Item findItemByName(String itemName){
         for(Item item: menu) {
